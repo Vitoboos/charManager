@@ -1,0 +1,244 @@
+body{
+    background-color: #0B1F5B;
+    color: white;
+}
+
+a{
+    text-decoration: underline;
+    color: white
+}
+
+a:hover{
+    color: darkred;
+}
+
+#goHome{
+    text-decoration: none;
+    color: white
+}
+
+#goHome:hover{
+    color: darkred;
+}
+
+.tableTitle{
+
+    background-color: #61004F;
+
+    display: grid;
+    margin: 2vh 5vw;
+    grid-template-columns: 20% 10% 10% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.character{
+    display: grid;
+    margin: 0px 5vw;
+    grid-template-columns: 20% 10% 10% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.character .item{
+    text-align: center;
+    background-color: #3C5CBA;
+}
+
+.character .item.stat{
+    text-align: center;
+    background-color: #29095C;
+}
+
+.subtitleBox{
+    background-color: white;
+
+    margin: 20px;
+    border-radius: 15px;
+
+    border-style: double;
+    border-color: #29095C;
+    border-width: thick;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.subtitleBox .subtitle{
+    color: black;
+    margin: 1vh 0px;
+    text-align: center;
+}
+
+.subtitleBox .desc{
+    color: black;
+    text-decoration: overline;
+}
+
+.charBio{
+    margin: 2vh 10vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+}
+
+.charBio h3{
+    margin: 0px;
+}
+
+#charSex{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0px;
+    margin: 0px 10vw;
+    list-style-type: none;
+}
+
+.charClass{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
+.charClass h3{
+    margin: 0px;
+}
+
+.switchBox{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    text-align: center;
+    margin: 0px 15vw;
+    color: white;
+}
+
+.switchBox .switch{
+    background-color: #61004F;
+    border-radius: 25px;
+}
+
+.switchBox .switch:hover{
+    cursor: pointer;
+}
+
+.switchBox .switch.active{
+    background-color: green;
+    border-radius: 25px;
+}
+
+.classGrid.active{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.classGrid{
+    display: none;
+}
+
+.classGrid h3{
+    text-align: center;
+    font-size: 14px;
+}
+
+.classGrid img{
+    display: block;
+    margin: auto;
+    width: 32px;
+    height: 32px;
+}
+
+.classGrid img:hover{
+    cursor: pointer;
+}
+
+.charStats{
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.charBases{
+    background-color: #B0459C;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin: 2vh 0px;
+    padding: 5px;
+
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+}
+
+.charBases .baseField{
+    display: block;
+    margin: auto;
+    width: 10vw;
+}
+
+.charBases .baseField h3{
+    margin: 0px;
+    text-align: center;
+}
+
+.charBases .baseField input{
+    display: block;
+    margin: auto;
+    width: 5vw;
+}
+
+
+.charGrowths{
+    background-color: #B0459C;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin: 2vh 0px;
+    padding: 5px;
+
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+}
+
+.charGrowths .baseField{
+    display: block;
+    margin: auto;
+    width: 10vw;
+}
+
+.charGrowths .baseField h3{
+    margin: 0px;
+    text-align: center;
+}
+
+.charGrowths .baseField input{
+    display: block;
+    margin: auto;
+    width: 5vw;
+}
+
+.submitChar{
+    display: block;
+    cursor: pointer;
+    margin: auto;
+    width: 20vw;
+    padding: 15px;
+}
+
+.viewChars{
+    display: block;
+    margin: 10px auto;
+    width: 20vw;
+    padding: 15px;
+}
+
+#goDelete{
+    font-size: 32px;
+    margin: 2vh 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

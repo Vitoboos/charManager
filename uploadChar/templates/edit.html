@@ -1,0 +1,422 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'edit.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<h1> Character Repository </h1> 
+
+<h2>  <a id="goHome" href="{% url 'uploadChar:characters' %}"> <-- Characters </a> </h2>
+
+<div class="tableTitle">
+    <div> Name</div>
+    <div> Class</div>
+    <div> Sex</div>
+
+    <div> Hitpoints</div>
+    <div> Strength</div>
+    <div> Skill</div>
+    <div> Speed</div>
+    <div> Luck</div>
+    <div> Defense</div>
+    <div> Resistance</div>
+    <div> Constitution</div>
+
+</div>
+
+<div class="character" id="charTable">
+
+    <div class="item"> <a href="{% url 'uploadChar:edit' item.id %}"> {{item.charName}} </a> </div>
+    <div class="item"> {{item.charClass}} </div>
+    <div class="item"> {{item.charSex}} </div>
+    <div class="item stat"> {{item.charHp}} </div>
+    <div class="item stat"> {{item.charStr}} </div>
+    <div class="item stat"> {{item.charSkl}} </div>
+    <div class="item stat"> {{item.charSpd}} </div>
+    <div class="item stat"> {{item.charLk}} </div>
+    <div class="item stat"> {{item.charDef}} </div>
+    <div class="item stat"> {{item.charRes}} </div>
+    <div class="item stat"> {{item.charCon}} </div>
+
+    <div class="item">  </div>
+    <div class="item">  </div>
+    <div class="item">  </div>
+    <div class="item stat"> {{item.charHpGrowth}}</div>
+    <div class="item stat"> {{item.charStrGrowth}} </div>
+    <div class="item stat"> {{item.charSklGrowth}} </div>
+    <div class="item stat"> {{item.charSpdGrowth}} </div>
+    <div class="item stat"> {{item.charLkGrowth}} </div>
+    <div class="item stat"> {{item.charDefGrowth}} </div>
+    <div class="item stat"> {{item.charResGrowth}} </div>
+    <div class="item stat">  </div>
+
+</div>
+
+<form id="charForm" method="post"> {% csrf_token %}
+
+    <div class="charBio">
+        
+        <div class="charData">
+            <h3> Name </h3>
+            {{ form.charName }}
+        </div>
+
+        <div class="charData">
+            <h3> Sex </h3> 
+            {{ form.charSex }}
+        </div>
+
+    </div>
+
+    <div class="charClass">
+
+        <h3> Class </h3>
+        {{ form.charClass }}
+
+    </div>
+
+    <div class="switchBox">
+        <h2 id="unpromotedBtn" class="switch active"> Unpromoted </h2>
+        <h2 id="promotedBtn" class="switch"> Promoted </h2>
+    </div>
+
+    <div id="unpromotedBox" class="classGrid active">
+
+        <div class="item">
+            <h3 class="name"> Archer </h3>
+            <img class="logo" src="{% static '/images/unpromoted/archer.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Bow Knight </h3>
+            <img class="logo" src="{% static '/images/unpromoted/bowKnight.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Brigand </h3>
+            <img class="logo" src="{% static '/images/unpromoted/brigand.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Cavalier</h3>
+            <img class="logo" src="{% static 'images/unpromoted/cavalier.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Cleric</h3>
+            <img class="logo" src="{% static 'images/unpromoted/cleric.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Dancer </h3>
+            <img class="logo" src="{% static 'images/unpromoted/dancer.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Fighter </h3>
+            <img class="logo" src="{% static 'images/unpromoted/fighter.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Knight </h3>
+            <img class="logo" src="{% static '/images/unpromoted/knight.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Lord </h3>
+            <img class="logo" src="{% static '/images/unpromoted/lord.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Mage </h3>
+            <img class="logo" src="{% static '/images/unpromoted/mage.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Manakete </h3>
+            <img class="logo" src="{% static 'images/unpromoted/manakete.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Mercenary</h3>
+            <img class="logo" src="{% static 'images/unpromoted/mercenary.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Myrmidon </h3>
+            <img class="logo" src="{% static 'images/unpromoted/myrmidon.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Pegasus Knight </h3>
+            <img class="logo" src="{% static 'images/unpromoted/pegasusKnight.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Pirate </h3>
+            <img class="logo" src="{% static '/images/unpromoted/pirate.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Priest </h3>
+            <img class="logo" src="{% static '/images/unpromoted/priest.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Shaman </h3>
+            <img class="logo" src="{% static '/images/unpromoted/shaman.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Soldier </h3>
+            <img class="logo" src="{% static 'images/unpromoted/soldier.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Thief </h3>
+            <img class="logo" src="{% static 'images/unpromoted/thief.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Troubadour </h3>
+            <img class="logo" src="{% static 'images/unpromoted/troubadour.png' %}">
+        </div>
+
+        <div class="item">
+            <h3 class="name"> Wyvern Rider </h3>
+            <img class="logo" src="{% static 'images/unpromoted/wyvernRider.png' %}">
+        </div>
+    </div>
+
+    <div id="promotedBox" class="classGrid">
+
+        <div class="item">
+            <h3  class="name"> Assassin </h3>
+            <img class="logo" src="{% static '/images/promoted/assassin.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Berserker </h3>
+            <img class="logo" src="{% static '/images/promoted/berserker.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Bishop </h3>
+            <img class="logo" src="{% static '/images/promoted/bishop.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Shaman </h3>
+            <img class="logo" src="{% static 'images/promoted/druid.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Falcon Knight</h3>
+            <img class="logo" src="{% static 'images/promoted/falconKnight.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> General </h3>
+            <img class="logo" src="{% static 'images/promoted/general.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Great Knight</h3>
+            <img class="logo" src="{% static 'images/promoted/greatKnight.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Great Lord</h3>
+            <img class="logo" src="{% static 'images/promoted/greatLord.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Halberdier </h3>
+            <img class="logo" src="{% static '/images/promoted/halberdier.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Hero </h3>
+            <img class="logo" src="{% static '/images/promoted/hero.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Mage Knight</h3>
+            <img class="logo" src="{% static '/images/promoted/mageKnight.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Paladin </h3>
+            <img class="logo" src="{% static 'images/promoted/paladin.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Ranger </h3>
+            <img class="logo" src="{% static 'images/promoted/ranger.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Rogue </h3>
+            <img class="logo" src="{% static 'images/promoted/rogue.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Sage </h3>
+            <img class="logo" src="{% static 'images/promoted/sage.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Sniper</h3>
+            <img class="logo" src="{% static '/images/promoted/sniper.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Summoner </h3>
+            <img class="logo" src="{% static '/images/promoted/summoner.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Swordmaster </h3>
+            <img class="logo" src="{% static '/images/promoted/swordmaster.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Valkyrie </h3>
+            <img class="logo" src="{% static 'images/promoted/valkyrie.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Warrior </h3>
+            <img class="logo" src="{% static 'images/promoted/warrior.png' %}">
+        </div>
+
+        <div class="item">
+            <h3  class="name"> Wyvern Lord </h3>
+            <img class="logo" src="{% static 'images/promoted/wyvernLord.png' %}">
+        </div>
+
+    </div>
+
+    <div class="charStats">
+
+    <div class="subtitleBox">
+        <h1 class="subtitle"> Bases </h1>
+        <p class="desc"> Initial stats </p>
+    </div>
+
+    <div class="charBases">
+
+    <div class="baseField">
+        <h3 class="statName"> Hitpoints </h3>
+        {{   form.charHp  }}
+    </div>
+
+    <div class="baseField">
+        <h3 class="statName"> Strength </h3>
+        {{   form.charStr }}
+
+    </div>
+
+    <div class="baseField">
+        <h3 class="statName"> Skill </h3>
+        {{   form.charSkl }}
+
+    </div>
+
+    <div class="baseField">
+        <h3 class="statName"> Speed </h3>
+        {{   form.charSpd }}
+
+    </div>
+
+    <div class="baseField">
+        <h3 class="statName"> Luck </h3>
+        {{   form.charLk  }}
+
+    </div>
+
+    <div class="baseField">
+        <h3 class="statName"> Defense </h3>
+        {{   form.charDef }}
+
+    </div>
+
+    <div class="baseField">
+        <h3 class="statName"> Resistance </h3>
+        {{   form.charRes }}
+
+    </div>
+
+    <div class="baseField">
+        <h3 class="statName"> Constitution </h3>
+        {{   form.charCon }}
+
+    </div>
+
+    </div>
+    
+    <div class="subtitleBox">
+        <h1 class="subtitle"> Growths </h1>
+        <p class="desc"> Chance of raising one stat </p>
+    </div>
+
+    <div class="charGrowths">
+
+        <div class="baseField">
+            <h3 class="statName"> Hitpoints </h3>
+            {{ form.charHpGrowth  }}
+        </div>
+
+        <div class="baseField">
+            <h3 class="statName"> Strength </h3>
+            {{ form.charStrGrowth }}
+        </div>
+
+        <div class="baseField">
+            <h3 class="statName"> Skill </h3>
+            {{ form.charSklGrowth }}
+        </div>
+
+        <div class="baseField">
+            <h3 class="statName"> Speed </h3>
+            {{ form.charSpdGrowth }}
+        </div>
+
+        <div class="baseField">
+            <h3 class="statName"> Luck </h3>
+            {{ form.charLkGrowth  }}
+        </div>
+
+        <div class="baseField">
+            <h3 class="statName"> Defense </h3>
+            {{ form.charDefGrowth }}
+        </div>
+
+        <div class="baseField">
+            <h3 class="statName"> Resistance </h3>
+            {{ form.charResGrowth }}
+        </div>
+
+    </div>
+
+    </div>
+
+    <input class="submitChar" type="submit" value="Update"> 
+
+    <a id="goDelete" href="{% url 'uploadChar:delete' item.id %}"> Delete Character </a>
+
+</form>
+
+{%  endblock %}
+
+
+{% block script %}
+
+<script src="{% static 'edit.js' %}"> </script>
+
+{% endblock %}

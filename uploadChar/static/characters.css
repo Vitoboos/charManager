@@ -1,0 +1,48 @@
+body{
+    background-color: #0B1F5B;
+    color: white;
+}
+
+a{
+    text-decoration: underline;
+    color: white
+}
+
+a:hover{
+    color: darkred;
+}
+
+#goHome{
+    text-decoration: none;
+    color: white
+}
+
+#goHome:hover{
+    color: darkred;
+}
+
+.tableTitle{
+
+    background-color: #61004F;
+
+    display: grid;
+    margin: 2vh 5vw;
+    grid-template-columns: 20% 10% 10% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.character{
+    display: grid;
+    margin: 0px 5vw;
+    grid-template-columns: 20% 10% 10% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.character .item{
+    text-align: center;
+    background-color: #3C5CBA;
+}
+
+.character .item.stat{
+    text-align: center;
+    background-color: #29095C;
+}

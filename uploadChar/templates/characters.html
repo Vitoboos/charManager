@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'characters.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<h1> Character Repository </h1> 
+
+<h2>  <a id="goHome" href="{% url 'uploadChar:home' %}"> <-- Home </a> </h2>
+
+    <div class="tableTitle">
+        <div> Name</div>
+        <div> Class</div>
+        <div> Sex</div>
+
+        <div> Hitpoints</div>
+        <div> Strength</div>
+        <div> Skill</div>
+        <div> Speed</div>
+        <div> Luck</div>
+        <div> Defense</div>
+        <div> Resistance</div>
+        <div> Constitution</div>
+
+    </div>
+
+    {% for item in char %}
+    
+    <div class="character">
+
+        <div class="item"> <a href="{% url 'uploadChar:edit' item.id %}"> {{item.charName}} </a> </div>
+        <div class="item"> {{item.charClass}} </div>
+        <div class="item"> {{item.charSex}} </div>
+        <div class="item stat"> {{item.charHp}} </div>
+        <div class="item stat"> {{item.charStr}} </div>
+        <div class="item stat"> {{item.charSkl}} </div>
+        <div class="item stat"> {{item.charSpd}} </div>
+        <div class="item stat"> {{item.charLk}} </div>
+        <div class="item stat"> {{item.charDef}} </div>
+        <div class="item stat"> {{item.charRes}} </div>
+        <div class="item stat"> {{item.charCon}} </div>
+
+    </div>
+
+    {% endfor %}
+
+{%  endblock %}
+
+
+{% block script %}
+
+
+{% endblock %}
